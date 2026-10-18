@@ -1,0 +1,348 @@
+<title>Türkiyenik Gizlilik Politikası</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap">
+
+<style>
+/* Layout: tek sütun belge, maksimum okunabilirlik */
+:root {
+  --bg: #fafaf8;
+  --bg2: #ffffff;
+  --fg: #1a1a1a;
+  --fg2: #4a4a4a;
+  --fg3: #7a7a7a;
+  --accent: #c0392b;
+  --border: #e8e4df;
+  --tag-bg: #f2ede8;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141414;
+    --bg2: #1e1e1e;
+    --fg: #f0ede8;
+    --fg2: #b0aca6;
+    --fg3: #706c68;
+    --accent: #e05545;
+    --border: #2e2e2e;
+    --tag-bg: #252520;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141414;
+  --bg2: #1e1e1e;
+  --fg: #f0ede8;
+  --fg2: #b0aca6;
+  --fg3: #706c68;
+  --accent: #e05545;
+  --border: #2e2e2e;
+  --tag-bg: #252520;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.75;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+}
+
+/* ── Başlık bandı ── */
+.page-header {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding-block: 2.5rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  margin-left: max(-16px, calc(-1 * env(safe-area-inset-left, 0px)));
+  margin-right: max(-16px, calc(-1 * env(safe-area-inset-right, 0px)));
+  margin-bottom: 2.5rem;
+}
+
+.header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.app-label {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .6rem;
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  line-height: 1.2;
+  color: var(--fg);
+  text-wrap: balance;
+  margin-bottom: .8rem;
+}
+
+.meta-row {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.meta-tag {
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: .18rem .6rem;
+  font-size: .72rem;
+  color: var(--fg2);
+  font-weight: 500;
+}
+
+/* ── İçerik ── */
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+}
+
+.section {
+  margin-bottom: 2.8rem;
+}
+
+.section-num {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .35rem;
+}
+
+.section h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--fg);
+  text-wrap: balance;
+  margin-bottom: .9rem;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.section p {
+  color: var(--fg2);
+  margin-bottom: .75rem;
+  max-width: 65ch;
+}
+
+.section p:last-child { margin-bottom: 0; }
+
+ul.items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  margin-bottom: .75rem;
+}
+
+ul.items li {
+  display: flex;
+  gap: .7rem;
+  color: var(--fg2);
+}
+
+ul.items li::before {
+  content: "–";
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: .02em;
+}
+
+.highlight-box {
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  padding: .9rem 1.1rem;
+  margin: 1rem 0;
+}
+
+.highlight-box p {
+  margin-bottom: 0;
+  font-size: .9rem;
+}
+
+/* ── İletişim kartı ── */
+.contact-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.2rem 1.4rem;
+  margin-top: 1rem;
+}
+
+.contact-card .label {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--fg3);
+  margin-bottom: .25rem;
+}
+
+.contact-card .value {
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--fg);
+  word-break: break-all;
+  user-select: all;
+}
+
+/* ── Alt çizgi ── */
+.page-footer {
+  border-top: 1px solid var(--border);
+  padding-block: 1.6rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  margin-left: max(-16px, calc(-1 * env(safe-area-inset-left, 0px)));
+  margin-right: max(-16px, calc(-1 * env(safe-area-inset-right, 0px)));
+  margin-bottom: 0;
+}
+
+.footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-inner p {
+  font-size: .75rem;
+  color: var(--fg3);
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: .9rem;
+  color: var(--fg2);
+}
+
+.footer-brand span { color: var(--accent); }
+</style>
+
+<header class="page-header">
+  <div class="header-inner">
+    <div class="app-label">Türkiyenik</div>
+    <h1>Gizlilik Politikası</h1>
+    <div class="meta-row">
+      <span class="meta-tag">Son güncelleme: Ekim 2026</span>
+      <span class="meta-tag">Türkçe</span>
+      <span class="meta-tag">KVKK Uyumlu</span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <div class="section">
+    <div class="section-num">Giriş</div>
+    <h2>Bu politika hakkında</h2>
+    <p>Türkiyenik uygulamasını ("Uygulama") kullandığınızda bazı kişisel verileriniz işlenmektedir. Bu belge; hangi verilerin toplandığını, nasıl kullanıldığını ve haklarınızın neler olduğunu açıklamaktadır.</p>
+    <p>Uygulamayı kullanarak bu politikayı kabul etmiş sayılırsınız.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">01</div>
+    <h2>Toplanan veriler</h2>
+    <p>Uygulama yalnızca işlevsellik için gerekli olan minimum düzeyde veri toplar:</p>
+    <ul class="items">
+      <li><strong>Hesap bilgileri:</strong> Kayıt sırasında girdiğiniz e-posta adresi ve seçtiğiniz kullanıcı adı.</li>
+      <li><strong>Quiz sonuçları:</strong> Tamamladığınız testlere ait puan ve süre bilgileri.</li>
+      <li><strong>Oturum bilgileri:</strong> Giriş yaptığınızda Firebase Authentication tarafından otomatik oluşturulan kullanıcı kimliği (UID).</li>
+    </ul>
+    <div class="highlight-box">
+      <p>Konum, kamera, mikrofon veya kişi listesi gibi hassas cihaz verilerine erişilmez ve bu veriler toplanmaz.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-num">02</div>
+    <h2>Verilerin kullanım amacı</h2>
+    <p>Toplanan veriler yalnızca şu amaçlarla kullanılır:</p>
+    <ul class="items">
+      <li>Kullanıcı hesabının oluşturulması ve kimlik doğrulaması.</li>
+      <li>Quiz sonuçlarının sıralamada (leaderboard) gösterilmesi.</li>
+      <li>Turnuva modunda sınıf bazlı sıralamalar oluşturulması.</li>
+      <li>En iyi skorunuzun kaydedilmesi ve kıyaslanması.</li>
+    </ul>
+    <p>Verileriniz üçüncü taraflara satılmaz, kiralanmaz veya pazarlama amacıyla kullanılmaz.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">03</div>
+    <h2>Üçüncü taraf hizmetler</h2>
+    <p>Uygulama, Google tarafından sağlanan Firebase altyapısını kullanmaktadır:</p>
+    <ul class="items">
+      <li><strong>Firebase Authentication:</strong> E-posta/şifre ve Google ile giriş işlemleri.</li>
+      <li><strong>Cloud Firestore:</strong> Kullanıcı adı ve skor verilerinin saklanması.</li>
+    </ul>
+    <p>Firebase'in kendi gizlilik politikası geçerlidir: <strong>policies.google.com/privacy</strong></p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">04</div>
+    <h2>Veri güvenliği</h2>
+    <p>Verileriniz Google'ın güvenli sunucularında depolanmaktadır. Firebase, endüstri standardı şifreleme ve güvenlik protokolleri kullanmaktadır.</p>
+    <p>Şifreniz hiçbir zaman düz metin olarak saklanmaz; Firebase Authentication tarafından güvenli şekilde yönetilir.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">05</div>
+    <h2>Çocukların gizliliği</h2>
+    <p>Uygulama 13 yaş ve üzeri kullanıcılara yöneliktir. 13 yaşın altındaki bireylerden bilerek kişisel veri toplanmaz. Bu durumun farkına varılması halinde ilgili hesap silinecektir.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">06</div>
+    <h2>Haklarınız</h2>
+    <p>Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında aşağıdaki haklara sahipsiniz:</p>
+    <ul class="items">
+      <li>Verilerinizin işlenip işlenmediğini öğrenme hakkı.</li>
+      <li>Yanlış veya eksik verilerin düzeltilmesini talep etme hakkı.</li>
+      <li>Verilerinizin silinmesini talep etme hakkı (hesap silme).</li>
+      <li>Veri işlemeye itiraz etme hakkı.</li>
+    </ul>
+    <p>Bu haklarınızı kullanmak için aşağıdaki iletişim adresine başvurabilirsiniz.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">07</div>
+    <h2>İletişim</h2>
+    <p>Gizlilik politikasına ilişkin soru, talep veya şikayetleriniz için:</p>
+    <div class="contact-card">
+      <div class="label">Telefon</div>
+      <div class="value">05411271008</div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="page-footer">
+  <div class="footer-inner">
+    <p>© 2026 Türkiyenik. Tüm hakları saklıdır.</p>
+    <div class="footer-brand">Türkiye<span>nik</span></div>
+  </div>
+</footer>
